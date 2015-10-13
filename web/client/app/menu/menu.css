@@ -1,0 +1,29 @@
+.menu-item {
+  height: 100px;
+  line-height: 100px;
+}
+
+.menu-item-content {
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar {
+   margin-bottom: 0;
+}
+
+.container.menu {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.cursor-hand {
+  cursor: pointer;
+}
+
+.pl-0 {
+
+  padding-left: 0;
+}

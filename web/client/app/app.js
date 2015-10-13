@@ -6,14 +6,24 @@ angular.module('webApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'pascalprecht.translate'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+
+    $translateProvider.useStaticFilesLoader({
+      prefix: '../locale/locale-',
+      suffix: '.json'
+    });
+    //$translateProvider.preferredLanguage('en_US');
+    $translateProvider.preferredLanguage('ro_RO');
+
+    $translateProvider.useSanitizeValueStrategy('sanitize');
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

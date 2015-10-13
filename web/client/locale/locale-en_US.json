@@ -1,0 +1,11 @@
+{
+  "HELLO_TEXT"    : "Hello World!",
+
+  "ICE_CREAM"     : "Ice cream",
+  "BEER"          : "Beer",
+  "WINES"         : "Wines",
+  "SOUPS"         : "Soups",
+  "BURGERS"       : "Burgers",
+  "CAKES"         : "Cakes",
+  "HARD_LIQUORS"  : "Hard liquors"
+}
