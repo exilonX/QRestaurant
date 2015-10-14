@@ -1,4 +1,11 @@
 {
+  "HOME"          : "Home",
+  "MENU"          : "Menu",
+  "HELLO"         : "Hello",
+  "SIGN_UP"       : "Sign up",
+  "LOGIN"         : "Login",
+  "LOGOUT"        : "Logout",
+  "ADMIN"         : "Admin",
   "HELLO_TEXT"    : "Hello World!",
 
   "ICE_CREAM"     : "Ice cream",

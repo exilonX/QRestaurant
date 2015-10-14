@@ -3,10 +3,10 @@
 angular.module('webApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'HOME',
       'link': '/'
     }, {
-      'title' : 'Meniu',
+      'title' : 'MENU',
       'link' : '/client/meniu'
     }];
 

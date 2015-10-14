@@ -20,10 +20,11 @@ angular.module('webApp', [
       prefix: '../locale/locale-',
       suffix: '.json'
     });
-    //$translateProvider.preferredLanguage('en_US');
-    $translateProvider.preferredLanguage('ro_RO');
 
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    $translateProvider.preferredLanguage('en_US');
+    //$translateProvider.preferredLanguage('ro_RO');
+
+    //$translateProvider.useSanitizeValueStrategy('sanitize');
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
