@@ -1,0 +1,18 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- Return to menu - subcategory head -->
+<div class="menu-item" style="background-color : grey">
+  <div class="menu-item-content" ng-click="goToMainMenu()">
+    <div class="col-xs-2 menu-item-img"><img ng-src="../../assets/images/menu_items/back.png"></div>
+    <div class="col-xs-9 menu-item-text">Revenire la meniu</div>
+  </div>
+</div>
+
+<div ng-repeat="item in subcategories">
+  <div class="menu-item" style="background-color : {{item.background}}">
+    <div class="menu-item-content">
+      <div class="col-xs-2 menu-item-img"><img ng-src="{{item.image_url}}"></div>
+      <div class="col-xs-9 menu-item-text">{{ item.sub_name }}</div>
+      <div class="col-xs-1  cursor-hand pl-0 menu-item-chevron"><span class="glyphicon glyphicon-chevron-right"></span></div>
+    </div>
+  </div>
+</div>

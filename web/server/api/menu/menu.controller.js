@@ -20,6 +20,34 @@ exports.show = function(req, res) {
   });
 };
 
+exports.showAllCategories = function showAllCategories(req, res) {
+  var restaurant_id = req.params.restaurant_id + '';
+  Menu.findOne(
+    { restaurant_id : restaurant_id},
+    { _id : 0, 'main_categories.category_name' : 1, 'main_categories.image_url' : 1, 'main_categories.background' : 1},
+    function(err, result) {
+      if (err) { console.log(err); return handleError(res, err); }
+
+      var main_categories = result.main_categories;
+      return res.status(200).json(main_categories);
+  });
+}
+
+exports.showAllSubcategories = function showAllSubcategories(req, res) {
+  var category = req.params.category;
+  var restaurant_id = req.params.restaurant_id + '';
+  console.log(category, restaurant_id);
+  Menu.findOne(
+    { restaurant_id : restaurant_id},
+    { _id : 0, 'main_categories.sub_categories' : 1, main_categories : {$elemMatch : { category_name : category } } },
+    function(err, result) {
+      if (err) { console.log(err); return handleError(res, err); }
+
+      var sub_categories = result.main_categories[0].sub_categories;
+      return res.status(200).json(sub_categories);
+  });
+}
+
 // Creates a new menu in the DB.
 exports.create = function(req, res) {
   Menu.create(req.body, function(err, menu) {

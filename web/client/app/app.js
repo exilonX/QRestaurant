@@ -7,7 +7,8 @@ angular.module('webApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'webStorageModule'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $translateProvider) {
     $urlRouterProvider
