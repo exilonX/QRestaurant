@@ -5,21 +5,23 @@
 starter.controller('DashCtrl', function ($scope, $state, $http, api, Tables) {
   var url = api + 'orders/notification/table/561d6c78609f6806539a6b7f';
 
-
-  console.log(url);
-
   $scope.notification = {};
 
+  // initialize the controller on first load
   $scope.$on('$ionicView.enter', function() {
     initialize();
   });
 
   var initialize = function() {
-    getTableNotifications();
+    getTableNotifications(Tables.getTables());
+
+    // register for instant updates
+    Tables.registerUpdate('DashCtrl', $scope);
   };
 
-  var getTableNotifications = function() {
-    var tableUrl = url + '?tables=' + JSON.stringify(Tables.getTables());
+  // get notifications for certain tables
+  var getTableNotifications = function(tables) {
+    var tableUrl = url + '?tables=' + JSON.stringify(tables);
 
     $http.get(tableUrl)
       .success(function(data) {
@@ -30,5 +32,9 @@ starter.controller('DashCtrl', function ($scope, $state, $http, api, Tables) {
       });
   }
 
+  // listen from updates from the service
+  $scope.$on('tables:update', function(event, tables) {
+    getTableNotifications(tables);
+  });
 
 });
