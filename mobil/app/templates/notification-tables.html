@@ -1,0 +1,39 @@
+<ion-view view-title="Notificari ocupare masa">
+    <ion-content class="padding">
+        <!--<div class="list card" ng-repeat="notif in notification">-->
+        <!--<div class="item item-divider">Masa cu numarul {{notif.table_id}}</div>-->
+        <!--<div class="item item-body bar-balanced"-->
+        <!--ng-repeat="tbl in notif.notifications.table"-->
+        <!--ng-class="tbl.master == true ? 'masterTable' :  'slaveTable'">-->
+        <!--<div>-->
+        <!--Cerere de alocare de la {{tbl.user}}-->
+        <!--<i class="icon ion-ios-circle-filled iconApproved" ng-show="tbl.approved"></i>-->
+        <!--<i class="icon ion-ios-circle-filled iconNotApproved" ng-show="!tbl.approved"></i>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+        <ion-list>
+            <ion-item ng-repeat="notif in notification">
+                <h2>Masa cu numarul {{notif.table_id}}</h2>
+                <ion-item ng-repeat="tbl in notif.notifications.table"
+                          ng-class="tbl.master == true ? 'masterTable' :  'slaveTable'">
+                    Cerere de alocare de la {{tbl.user}}
+                    <i class="icon ion-ios-circle-filled iconApproved" ng-show="tbl.approved"></i>
+                    <i class="icon ion-ios-circle-filled iconNotApproved" ng-show="!tbl.approved"></i>
+
+                    <ion-option-button class="button-calm"
+                                       ng-click="edit(tbl)" ng-show="!tbl.approved">
+                        Accept
+                    </ion-option-button>
+                    <ion-option-button class="button-assertive"
+                                       ng-click="share(tbl)" ng-show="!tbl.approved">
+                        Reject
+                    </ion-option-button>
+                </ion-item>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

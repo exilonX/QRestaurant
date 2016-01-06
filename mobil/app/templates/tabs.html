@@ -3,22 +3,45 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-  <ion-slide-box on-slide-changed="onSlideChanged($index)">
-
-    <!-- Chats Tab -->
-    <ion-slide >
-      <ion-nav-view name="tab-chats"></ion-nav-view>
-    </ion-slide>
-
-    <!-- Dashboard Tab -->
-    <ion-slide>
-      <ion-nav-view name="tab-dash"></ion-nav-view>
-    </ion-slide>
-
-    <!-- Account Tab -->
-    <ion-slide>
-      <ion-nav-view name="tab-account"></ion-nav-view>
-    </ion-slide>
 
 
-  </ion-slide-box>
+<ion-side-menus>
+    <ion-side-menu ng-controller="TableCtrl" side="left">
+        <ion-nav-title>Notificari mese</ion-nav-title>
+        <ion-list title="Notificari mese" show-delete="shouldShowDelete"
+                  show-reorder="shouldShowReorder"
+                  can-swipe="listCanSwipe">
+            <ion-item>Lista de mese</ion-item>
+            <ion-toggle ng-repeat="table in data.tables" ng-model="table.notify" ng-change="change(table)">a
+
+                {{table.name}}
+
+            </ion-toggle>
+        </ion-list>
+    </ion-side-menu>
+
+    <ion-side-menu-content>
+        <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+            <!-- Dashboard Tab -->
+            <ion-tab title="Notificari Ocupare" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong"
+                     href="#/tab/dash">
+                <ion-nav-view name="tab-dash"></ion-nav-view>
+            </ion-tab>
+
+            <!-- Chats Tab -->
+            <ion-tab title="Notificari Comanda" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes"
+                     href="#/tab/chats">
+                <ion-nav-view name="tab-chats"></ion-nav-view>
+            </ion-tab>
+
+            <!-- Account Tab -->
+            <ion-tab title="Nota" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+                <ion-nav-view name="tab-account"></ion-nav-view>
+            </ion-tab>
+
+
+        </ion-tabs>
+    </ion-side-menu-content>
+
+</ion-side-menus>
