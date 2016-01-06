@@ -3,8 +3,11 @@
 angular.module('webApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'HOME',
       'link': '/'
+    }, {
+      'title' : 'MENU',
+      'link' : '/client/meniu'
     }];
 
     $scope.isCollapsed = true;

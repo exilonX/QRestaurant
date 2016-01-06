@@ -1,0 +1,19 @@
+{
+  "HOME"          : "Acasa",
+  "MENU"         : "Meniu",
+  "HELLO"         : "Buna",
+  "SIGN_UP"       : "Inregistrare",
+  "LOGIN"         : "Conectare",
+  "LOGOUT"        : "Deconectare",
+  "ADMIN"         : "Administrator",
+
+  "HELLO_TEXT"    : "Salutare lume!",
+
+  "ICE_CREAM"     : "Inghetata",
+  "BEER"          : "Bere",
+  "WINES"         : "Vinuri",
+  "SOUPS"         : "Supe/Ciorbe",
+  "BURGERS"       : "Burgeri",
+  "CAKES"         : "Prajituri",
+  "HARD_LIQUORS"  : "Bauturi alcoolice"
+}
