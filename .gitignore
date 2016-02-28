@@ -20,5 +20,8 @@ mobil/*.swp
 mobil/*.swo
 mobil/*.log
 mobil/*.DS_Store
+
+
+
 #mobil/app/scripts/configuration.js
 

@@ -1,0 +1,20 @@
+/* Empty. Add your own CSS if you like */
+.menu {
+    top: 43px !important;
+}
+
+.masterTable {
+    background-color : cornflowerblue
+}
+
+.slaveTable {
+    background-color : antiquewhite
+}
+
+.iconApproved {
+    color : #d2ffa2
+}
+
+.iconNotApproved {
+    color : #ff777e
+}

@@ -1,18 +1,23 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+  Schema = mongoose.Schema;
 
 var RestaurantsSchema = new Schema({
+  name : String,
+  address : String,
+  website : String,
+  tables : [{
     name : String,
-    address : String,
-    website : String,
-    tables : [{
-        name : String,
-        id : String,
-        qr : String,
-        location : String
-    }]
+    id : String,
+    qr : String,
+    location : String,
+    // a table can be deactivated by an admin
+    active : {
+      type : Boolean,
+      default : true
+    }
+  }]
 });
 
 module.exports = mongoose.model('Restaurants', RestaurantsSchema);

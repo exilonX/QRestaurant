@@ -6,6 +6,8 @@ app.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) 
 
   $scope.login = function() {
 
+    Ionic.io();
+
     var push = new Ionic.Push({
       "debug": true
     });

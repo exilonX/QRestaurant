@@ -99,3 +99,14 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+
+exports.dummyLogin = function(req, res) {
+  var user = req.query.username;
+  var pass = req.query.password;
+
+  if (user == 'secret') {
+
+  }
+
+  res.send(200);
+}
