@@ -13,6 +13,11 @@ module.exports = {
             process.env.PORT ||
             8080,
 
+  redis : {
+    host : 'localhost',
+    port : 6379
+  },
+
   // MongoDB connection options
   mongo: {
     uri:    process.env.MONGOLAB_URI ||

@@ -8,5 +8,10 @@ module.exports = {
     uri: 'mongodb://localhost/web-dev'
   },
 
+  redis : {
+    host : 'localhost',
+    port : 6379
+  },
+
   seedDB: false
 };
