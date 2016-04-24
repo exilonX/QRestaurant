@@ -1,6 +1,12 @@
 # QRestaurant
 QRestataurant - web application for easy ordering in a restaurant
 
+0. Prerequisites:
+  - Nodejs  >= 0.10 (tested with 0.12.7 and )
+  - npm installed (usually comes with nodejs installation)
+  - bower installed (npm install -g bower)
+  - grunt installed (npm install -g grunt)
+  - mongodb - installed and running
 
 ========================================
 Installing mongodb in docker:
@@ -13,11 +19,16 @@ Installing mongodb in docker:
 ========================================
 
 
-0. Prerequisites:
-  - Nodejs  >= 0.10 (tested with 0.12.7 and )
-  - npm installed (usually comes with nodejs installation)
-  - bower installed (npm install -g bower)
-  - mongodb - installed and running
+=========================
+
+Rulare teste:
+  - Set env variable for Phantomjs - export PHANTOMJS_BIN=path_to/QRestaurant/web/node_modules/phantomjs/bin
+  - grunt test
+
+
+
+=========================
+
 
 
 

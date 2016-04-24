@@ -1,0 +1,12 @@
+FROM mongo:latest
+
+# create log folder
+RUN mkdir -p /data/log/mongodb/ &&  chown -R mongodb:mongodb /data/log/
+
+# make it a volume so you can mount it
+VOLUME /data/log
+
+# copy the config file
+COPY config/mongod.conf /etc
+
+CMD ["mongod", "--config", "/etc/mongod.conf"]
