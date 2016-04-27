@@ -12,7 +12,7 @@ COPY scripts/nave.sh /opt
 RUN bash /opt/nave.sh usemain 4.4.1
 
 # clone the repo from github (branch master)
-RUN cd /opt && git clone https://github.com/exilonX/QRestaurant.git
+RUN cd /opt && git clone -b dev https://github.com/exilonX/QRestaurant.git
 
 # install packages
 RUN npm install -g bower
