@@ -1,5 +1,5 @@
 # QRestaurant
-QRestataurant - web application for easy ordering in a restaurant
+QRestaurant - web application for easy ordering in a restaurant
 
 0. Prerequisites:
   - Nodejs  >= 0.10 (tested with 0.12.7 and )

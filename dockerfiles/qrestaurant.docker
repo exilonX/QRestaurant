@@ -1,0 +1,27 @@
+FROM ubuntu:14.04
+
+RUN apt-get update -y && apt-get install -y curl wget git supervisor build-essential nginx
+RUN mkdir -p /var/log/supervisor
+RUN mkdir -p /data
+RUN mkdir -p /logs
+
+VOLUME /logs
+
+# install nodejs 4.4.1
+COPY scripts/nave.sh /opt
+RUN bash /opt/nave.sh usemain 4.4.1
+
+# clone the repo from github (branch master)
+RUN cd /opt && git clone https://github.com/exilonX/QRestaurant.git
+
+# install packages
+RUN npm install -g bower
+RUN cd /opt/QRestaurant/web/ && npm install >> outputnpm && bower install >> outputbower
+
+# copy nginx config file
+RUN rm /etc/nginx/sites-enabled/default
+COPY config/nginx/qrest.conf /etc/nginx/sites-enabled
+
+COPY config/supervisor/supervisor.conf /etc/supervisor/conf.d
+EXPOSE 80 9001 9002
+CMD "/usr/bin/supervisord"
